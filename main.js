@@ -2,13 +2,25 @@
 // la información y por medio de un botón ejecutar un función 
 // que muestre los datos capturados
 
-const obtenerData= () => {
-    
-    
-    return 'hola'
-}
+const mostrar = function(mensaje="No enviado",callback) {
+    document.querySelector(".mensaje").insertAdjacentHTML("beforeend", `<b>${mensaje} : <span>${callback.value}</span> </b> enviado desde el formulario<br>`);
+};
 
-
+addEventListener("submit", function (e){
+    let input = e.target;
+    document.querySelector(".mensaje").innerHTML = null;
+    mostrar("Primer Nombre", input.dato1);
+    mostrar("Segundo Nombre", input.dato2);
+    mostrar("Primer Apellido", input.dato3);
+    mostrar("Segundo Apellido", input.dato4);
+    mostrar("Email ", input.dato5);
+    mostrar("Edad", input.dato6);
+    mostrar("Dirección", input.dato7);
+    mostrar("Celular", input.dato8);
+    mostrar("País", input.dato9);
+    mostrar("Municipio", input.dato10);
+    e.preventDefault();
+}) 
 
 
 
